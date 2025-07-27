@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<title>Dalgona Candy</title>
+<style>
+:root{--bg:#000;--rim-tl:#f3b76e;--rim-tr:#ca7f2f;--rim-br:#9f5615;--rim-bl:#c37121;--outline-color:#78330b}body{margin:0;height:100vh;display:grid;place-items:center;background:var(--bg)}.dalgona{position:relative;width:250px;height:250px;border-radius:50%;background:conic-gradient(from -45deg,var(--rim-tl),var(--rim-tr),var(--rim-br),var(--rim-bl),var(--rim-tl));display:grid;place-items:center;overflow:hidden}.dalgona::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border-radius:50%;background:linear-gradient(to bottom right,#ed9f43,#e08e31,#d17b22);box-shadow:inset 2px 2px 0px rgba(255,255,255,0.4),inset -2px -2px 0px rgba(0,0,0,0.1)}.dalgona svg{width:211px;height:279px;fill:none;stroke:var(--outline-color);stroke-width:6;stroke-linejoin:round;stroke-linecap:round;z-index:1}
+</style>
+<div class="dalgona">
+<svg viewBox="0 -15 100 156">
+<defs>
+<filter id="soften-points"><feMorphology operator="dilate" radius="1" in="SourceAlpha" result="dilated" /><feMorphology operator="erode" radius="1" in="dilated" result="eroded" /><feComposite in="SourceGraphic" in2="eroded" operator="in" /></filter>
+</defs>
+<g transform="translate(0, -3)" filter="url(#soften-points)"><path d="M50 5 L60 35 H95 L67 55 L75 85 L50 65 L25 85 L33 55 L5 35 H40 Z" /><line x1="50" y1="70" x2="50" y2="112" /></g>
+</svg>
+</div>
