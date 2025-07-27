@@ -1,279 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset=UTF-8>
+  <meta name=viewport content="width=device-width, initial-scale=1.0">
   <title>Geometric Art</title>
   <style>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #000;
-    }
-
-    .canvas {
-      width: 350px;
-      height: 531px;
-      background-color: #F28C28;
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    /* Quarter Circle */
-    .quarter-circle {
-      width: 120px;
-      height: 120px;
-      background-color: #1C1C3A;
-      border-top-right-radius: 100%;
-      position: absolute;
-      top: 18px;
-      left: 12px;
-    }
-
-    /* Diagonal Lines */
-    .line {
-      position: absolute;
-      width: 150px;
-      height: 6px;
-      background-color: #1C1C3A;
-      transform: rotate(135deg);
-      transform-origin: left center;
-    }
-
-    .line1 { top: 115px; left: 155px;width: 200px; }
-    .line2 { top: 115px; left: 195px; width: 250px; }
-    .line3 { top: 115px; left: 115px; }
-    .line5 { top: 20px; left: 145px;width: 100px; }
-    .line4 { top: 20px; left: 175px; width: 230px;}
-    .line6 { top: 20px; left: 115px;width: 100px; }
-
-    /* Triangle */
-    .triangle {
-      width: 0;
-      height: 0;
-      border-left: 40px solid transparent;
-      border-right: 40px solid transparent;
-      border-bottom: 70px solid #F24E1E;
-      position: absolute;
-      top: 40px;
-      left: 165px;
-    }
-
-    /* Top Right Circle */
-    .circle-top-right {
-      width: 80px;
-      height: 80px;
-      background-color: #1C1C3A;
-      border-radius: 50%;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    /* Middle Large Circle */
-    .circle-middle {
-      width: 120px;
-      height: 120px;
-      background-color: #1C1C3A;
-      border-radius: 50%;
-      position: absolute;
-      top: 130px;
-      right: 50px;
-    }
-
-    /* Small Square */
-    .square {
-      width: 30px;
-      height: 30px;
-      background-color: #1C1C3A;
-      position: absolute;
-      top: 290px;
-      right: 130px;
-    }
-
-    /* Horizontal Line */
-    .h-line {
-      width: 90px;
-      height: 4px;
-      background-color: #1C1C3A;
-      position: absolute;
-      top: 300px;
-      right: 30px;
-    }
-
-    /* Concentric Circles (4 total) */
-    .concentric {
-      position: absolute;
-      bottom: 239px;
-      left: 54px;
-    }
-
-    .concentric span {
-      position: absolute;
-      border: 6px solid #1C1C3A;
-      border-radius: 50%;
-    }
-
-    .concentric .c1 {
-      width: 25px;
-      height: 25px;
-      top: 30px;
-      left: 30px;
-    }
-
-    .concentric .c2 {
-      width: 45px;
-      height: 45px;
-      top: 20px;
-      left: 20px;
-    }
-
-    .concentric .c3 {
-      width: 65px;
-      height: 65px;
-      top: 10px;
-      left: 10px;
-    }
-
-    .concentric .c4 {
-      width: 85px;
-      height: 85px;
-      top: 0;
-      left: 0;
-    }
-
-    /* L Shape */
-    .l-shape {
-      position: absolute;
-      bottom: 30px;
-      left: 30px;
-    }
-
-    .l-shape::before,
-    .l-shape::after,
-    .l-shape-extension {
-      content: "";
-      position: absolute;
-      background-color: #F24E1E;
-    }
-
-    .l-shape::before {
-      width: 15px;
-      height: 100px;
-      left: 0;
-      bottom: 5px;
-    }
-
-    .l-shape::after {
-      width: 120px;
-      height: 15px;
-      left: 0;
-      bottom: 100px;
-    }
-
-    .l-shape-extension {
-      width: 15px;
-      height: 210px;
-      left: 120px;
-      bottom: 100px;
-    }
-
-    /* Dashed Circle */
-    .dashed-circle {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px dashed #1C1C3A;
-      position: absolute;
-      bottom: 30px;
-      right: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .dashed-circle div {
-      width: 105px;
-      height: 105px;
-      background-color: #F24E1E;
-      border-radius: 50%;
-    }
-
-    /* Independent Bottom Lines */
-    .bottom-line-1,
-    .bottom-line-2,
-    .bottom-line-3 {
-      position: absolute;
-      height: 5px;
-      background-color: #1C1C3A;
-      left: 65px;
-      
-    }
-
-    .bottom-line-1 {
-      width: 80px;
-      bottom: 100px;
-    }
-
-    .bottom-line-2 {
-      width: 100px;
-      bottom: 70px;
-    }
-
-    .bottom-line-3 {
-      width: 125px;
-      bottom: 40px;
-    }
+    body{margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background-color:#000;}
+    .canvas{width:350px;height:531px;background-color:#F28C28;position:relative;border-radius:20px;overflow:hidden;}
+    .quarter-circle{width:120px;height:120px;background-color:#1C1C3A;border-top-right-radius:100%;position:absolute;top:18px;left:12px;}
+    .line{position:absolute;width:150px;height:6px;background-color:#1C1C3A;transform:rotate(135deg);transform-origin:left center;}
+    .line1{top:115px;left:155px;width:200px;}
+    .line2{top:115px;left:195px;width:250px;}
+    .line3{top:115px;left:115px;}
+    .line4{top:20px;left:175px;width:230px;}
+    .line5{top:20px;left:145px;width:100px;}
+    .line6{top:20px;left:115px;width:100px;}
+    .triangle{width:0;height:0;border-left:40px solid transparent;border-right:40px solid transparent;border-bottom:70px solid #F24E1E;position:absolute;top:40px;left:165px;}
+    .circle-top-right{width:80px;height:80px;background-color:#1C1C3A;border-radius:50%;position:absolute;top:20px;right:20px;}
+    .circle-middle{width:120px;height:120px;background-color:#1C1C3A;border-radius:50%;position:absolute;top:130px;right:50px;}
+    .square{width:30px;height:30px;background-color:#1C1C3A;position:absolute;top:290px;right:130px;}
+    .h-line{width:90px;height:4px;background-color:#1C1C3A;position:absolute;top:300px;right:30px;}
+    .concentric{position:absolute;bottom:239px;left:54px;}
+    .concentric span{position:absolute;border:6px solid #1C1C3A;border-radius:50%;}
+    .concentric .c1{width:25px;height:25px;top:30px;left:30px;}
+    .concentric .c2{width:45px;height:45px;top:20px;left:20px;}
+    .concentric .c3{width:65px;height:65px;top:10px;left:10px;}
+    .concentric .c4{width:85px;height:85px;top:0;left:0;}
+    .l-shape{position:absolute;bottom:30px;left:30px;}
+    .l-shape::before,.l-shape::after,.l-shape-extension{content:"";position:absolute;background-color:#F24E1E;}
+    .l-shape::before{width:15px;height:100px;left:0;bottom:5px;}
+    .l-shape::after{width:120px;height:15px;left:0;bottom:100px;}
+    .l-shape-extension{width:15px;height:210px;left:120px;bottom:100px;}
+    .dashed-circle{width:120px;height:120px;border-radius:50%;border:4px dashed #1C1C3A;position:absolute;bottom:30px;right:30px;display:flex;align-items:center;justify-content:center;}
+    .dashed-circle div{width:105px;height:105px;background-color:#F24E1E;border-radius:50%;}
+    .bottom-line-1,.bottom-line-2,.bottom-line-3{position:absolute;height:5px;background-color:#1C1C3A;left:65px;}
+    .bottom-line-1{width:80px;bottom:100px;}
+    .bottom-line-2{width:100px;bottom:70px;}
+    .bottom-line-3{width:125px;bottom:40px;}
   </style>
-</head>
 <body>
-  <div class="canvas">
-    <!-- Quarter Circle -->
-    <div class="quarter-circle"></div>
-
-    <!-- Diagonal Lines -->
+  <div class=canvas>
+    <div class=quarter-circle></div>
     <div class="line line1"></div>
     <div class="line line2"></div>
     <div class="line line3"></div>
     <div class="line line4"></div>
     <div class="line line5"></div>
     <div class="line line6"></div>
-
-    <!-- Triangle -->
-    <div class="triangle"></div>
-
-    <!-- Circles -->
-    <div class="circle-top-right"></div>
-    <div class="circle-middle"></div>
-
-    <!-- Square and Line -->
-    <div class="square"></div>
-    <div class="h-line"></div>
-
-    <!-- Concentric Circles (now 4) -->
-    <div class="concentric">
-      <span class="c4"></span>
-      <span class="c3"></span>
-      <span class="c2"></span>
-      <span class="c1"></span>
+    <div class=triangle></div>
+    <div class=circle-top-right></div>
+    <div class=circle-middle></div>
+    <div class=square></div>
+    <div class=h-line></div>
+    <div class=concentric>
+      <span class=c4></span>
+      <span class=c3></span>
+      <span class=c2></span>
+      <span class=c1></span>
     </div>
-
-    <!-- L Shape -->
-    <div class="l-shape">
-      <div class="l-shape-extension"></div>
+    <div class=l-shape>
+      <div class=l-shape-extension></div>
     </div>
-
-    <!-- Dashed Circle -->
-    <div class="dashed-circle"><div></div></div>
-
-    <!-- Independent Bottom Lines -->
-    <div class="bottom-line-1"></div>
-    <div class="bottom-line-2"></div>
-    <div class="bottom-line-3"></div>
+    <div class=dashed-circle><div></div></div>
+    <div class=bottom-line-1></div>
+    <div class=bottom-line-2></div>
+    <div class=bottom-line-3></div>
   </div>
-</body>
-</html>
